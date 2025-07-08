@@ -35,6 +35,7 @@ The majority of match events should be pre-programmed and automated with the abi
 * Bulma
 * Inertia
 * Vite
+* Reverb
 
 ## Other
 
