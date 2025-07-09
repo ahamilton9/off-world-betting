@@ -28,66 +28,83 @@ const submit = () => {
 </script>
 
 <template>
-    <AuthBase title="Log in to your account" description="Enter your email and password below to log in">
-        <Head title="Log in" />
-
-        <div v-if="status" class="mb-4 text-center text-sm font-medium text-green-600">
-            {{ status }}
-        </div>
-
-        <form @submit.prevent="submit" class="flex flex-col gap-6">
-            <div class="grid gap-6">
-                <div class="grid gap-2">
-                    <Label for="email">Email address</Label>
-                    <Input
-                        id="email"
-                        type="email"
-                        required
-                        autofocus
-                        :tabindex="1"
-                        autocomplete="email"
-                        v-model="form.email"
-                        placeholder="email@example.com"
-                    />
-                    <InputError :message="form.errors.email" />
+    <div style="display: flex; align-items: center; justify-content: center; height: 100%;">
+        <div class="window" style="width: 350px">
+            <div class="title-bar">
+                <div class="title-bar-text">Off-World Betting NetSoft</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body" style="margin: 0;">
+                <div style="overflow: hidden; user-select: none; height: 75px; background: #c42121; background: linear-gradient(90deg,rgba(196, 33, 33, 1) 0%, rgba(255, 255, 255, 1) 100%); color: #fff; font-weight: bold; font-size: 6em; line-height: 1.25; padding-left: 10px; font-family: sans-serif;">
+                    <span style="transform: rotate(-20deg); display: inline-block;">OWB</span>
                 </div>
 
-                <div class="grid gap-2">
-                    <div class="flex items-center justify-between">
-                        <Label for="password">Password</Label>
-                        <TextLink v-if="canResetPassword" :href="route('password.request')" class="text-sm" :tabindex="5">
-                            Forgot password?
-                        </TextLink>
+                <form @submit.prevent="submit" style="padding: 10px 5px; display: flex;">
+                    <div style="width: 100%;">
+                        <menu role="tablist">
+                            <li role="tab" aria-selected="true"><a href="#tabs">Login</a></li>
+                            <li role="tab"><a href="#tabs">Register</a></li>
+                            <li role="tab"><a href="#tabs">Forgot</a></li>
+                        </menu>
+                        <div class="window" role="tabpanel">
+                            <div class="window-body">
+                                <div v-if="status">
+                                    {{ status }}
+                                </div>
+                                <div>
+                                    <strong>Logging into <u>offworld.bet</u></strong>
+                                </div>
+                                <div>
+                                    <div style="display: flex; margin: 5px 0;">
+                                        <Label for="email" style="flex-basis: 60px;">Email:</Label>
+                                        <Input
+                                            id="email"
+                                            type="email"
+                                            required
+                                            autofocus
+                                            :tabindex="1"
+                                            autocomplete="email"
+                                            v-model="form.email"
+                                            style="width: 180px;"
+                                        />
+                                        <InputError :message="form.errors.email" />
+                                    </div>
+
+                                    <div style="display: flex; margin: 5px 0;">
+                                        <Label for="password" style="flex-basis: 60px;">Password:</Label>
+                                        <Input
+                                            id="password"
+                                            type="password"
+                                            required
+                                            :tabindex="2"
+                                            autocomplete="current-password"
+                                            v-model="form.password"
+                                            style="width: 180px;"
+                                        />
+                                        <InputError :message="form.errors.password" />
+                                    </div>
+
+                                    <div style="margin: 5px 0;">
+                                        <input type="checkbox" id="remember" />
+                                        <label for="remember">Remember me</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <Input
-                        id="password"
-                        type="password"
-                        required
-                        :tabindex="2"
-                        autocomplete="current-password"
-                        v-model="form.password"
-                        placeholder="Password"
-                    />
-                    <InputError :message="form.errors.password" />
-                </div>
-
-                <div class="flex items-center justify-between">
-                    <Label for="remember" class="flex items-center space-x-3">
-                        <Checkbox id="remember" v-model="form.remember" :tabindex="3" />
-                        <span>Remember me</span>
-                    </Label>
-                </div>
-
-                <Button type="submit" class="mt-4 w-full" :tabindex="4" :disabled="form.processing">
-                    <LoaderCircle v-if="form.processing" class="h-4 w-4 animate-spin" />
-                    Log in
-                </Button>
+                    <div style="padding-left: 5px; padding-top: 20px; width: 25%;">
+                        <Button class="default" type="submit" :tabindex="4" :disabled="form.processing">
+                            <LoaderCircle v-if="form.processing" />
+                            Login
+                        </Button>
+                        <Button type="button" :tabindex="5" :disabled="form.processing" style="margin-top: 5px;">
+                            Help
+                        </Button>
+                    </div>
+                </form>
             </div>
-
-            <div class="text-center text-sm text-muted-foreground">
-                Don't have an account?
-                <TextLink :href="route('register')" :tabindex="5">Sign up</TextLink>
-            </div>
-        </form>
-    </AuthBase>
+        </div>
+    </div>
 </template>

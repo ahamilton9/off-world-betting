@@ -14,79 +14,81 @@ $yellow: hsl(35, 30%, 40%);
 $light: hsl(0, 0%, 94%);
 
 // Path to Bulma's sass folder
-@use "bulma/sass" with (
-    // Colors
-    $grey-darker: hsl(22, 12%, 20%),
-    $grey-dark: hsl(22, 12%, 35%),
-    $grey: hsl(22, 14%, 50%),
-    $grey-light: hsl(22, 12%, 65%),
-    $grey-lighter: hsl(22, 12%, 80%),
-    $grey-lightest: hsl(22, 12%, 95%),
+// @use "bulma/sass" with (
+//     // Colors
+//     $grey-darker: hsl(22, 12%, 20%),
+//     $grey-dark: hsl(22, 12%, 35%),
+//     $grey: hsl(22, 14%, 50%),
+//     $grey-light: hsl(22, 12%, 65%),
+//     $grey-lighter: hsl(22, 12%, 80%),
+//     $grey-lightest: hsl(22, 12%, 95%),
 
-    $orange: hsl(14, 100%, 53%),
-    $yellow: hsl(42, 100%, 53%),
-    $green: hsl(153, 53%, 53%),
-    $turquoise: hsl(171, 100%, 41%),
-    $cyan: hsl(198, 100%, 70%),
-    $blue: hsl(233, 100%, 63%),
-    $purple: hsl(271, 100%, 71%),
-    $red: $red,
+//     $orange: hsl(14, 100%, 53%),
+//     $yellow: hsl(42, 100%, 53%),
+//     $green: hsl(153, 53%, 53%),
+//     $turquoise: hsl(171, 100%, 41%),
+//     $cyan: hsl(198, 100%, 70%),
+//     $blue: hsl(233, 100%, 63%),
+//     $purple: hsl(271, 100%, 71%),
+//     $red: $red,
 
-    // Typography
-    $family-sans-serif: '"Nova Square", sans-serif',
-    $family-monospace: '"Inconsolata", "Hack", "SF Mono", "Roboto Mono", "Source Code Pro", "Ubuntu Mono", monospace',
+//     // Typography
+//     $family-sans-serif: '"Nova Square", sans-serif',
+//     $family-monospace: '"Inconsolata", "Hack", "SF Mono", "Roboto Mono", "Source Code Pro", "Ubuntu Mono", monospace',
 
-    // // Scheme colors
-    // $scheme-main: iv.$white !default,
-    // $scheme-main-bis: iv.$white-bis !default,
-    // $scheme-main-ter: iv.$white-ter !default,
-    // $scheme-invert: iv.$black !default,
-    // $scheme-invert-bis: iv.$black-bis !default,
-    // $scheme-invert-ter: iv.$black-ter !default,
+//     // // Scheme colors
+//     // $scheme-main: iv.$white !default,
+//     // $scheme-main-bis: iv.$white-bis !default,
+//     // $scheme-main-ter: iv.$white-ter !default,
+//     // $scheme-invert: iv.$black !default,
+//     // $scheme-invert-bis: iv.$black-bis !default,
+//     // $scheme-invert-ter: iv.$black-ter !default,
 
-    // // Text colors
-    // $text: iv.$grey-dark !default,
-    // $text-invert: fn.bulmaFindColorInvert($text) !default,
-    // $text-weak: iv.$grey !default,
-    // $text-strong: iv.$grey-darker !default,
+//     // // Text colors
+//     // $text: iv.$grey-dark !default,
+//     // $text-invert: fn.bulmaFindColorInvert($text) !default,
+//     // $text-weak: iv.$grey !default,
+//     // $text-strong: iv.$grey-darker !default,
 
-    // // Status colors
-    $primary: $yellow,
-    // $info: iv.$cyan !default,
-    // $success: iv.$green !default,
-    // $warning: iv.$yellow !default,
-    // $danger: iv.$red !default,
-    // $light: iv.$white-ter !default,
-    // $dark: iv.$grey-darker !default,
+//     // // Status colors
+//     $primary: $yellow,
+//     // $info: iv.$cyan !default,
+//     // $success: iv.$green !default,
+//     // $warning: iv.$yellow !default,
+//     // $danger: iv.$red !default,
+//     // $light: iv.$white-ter !default,
+//     // $dark: iv.$grey-darker !default,
 
-    // // Link colors
-    $link: hsl(241, 20%, 39%),
+//     // // Link colors
+//     $link: hsl(241, 20%, 39%),
 
-    // // Decorative colors
-    // $background: iv.$white-ter !default,
-    // $border: iv.$grey-lighter !default,
-    // $border-weak: iv.$grey-lightest !default,
+//     // // Decorative colors
+//     // $background: iv.$white-ter !default,
+//     // $border: iv.$grey-lighter !default,
+//     // $border-weak: iv.$grey-lightest !default,
 
-    // // Code colors
-    // $code: iv.$red !default,
-    // $code-background: $background !default,
+//     // // Code colors
+//     // $code: iv.$red !default,
+//     // $code-background: $background !default,
 
-    // $pre: $text !default,
-    // $pre-background: $background !default,
+//     // $pre: $text !default,
+//     // $pre-background: $background !default,
 
-    // // Typography
-    // $family-primary: iv.$family-sans-serif !default,
-    // $family-secondary: iv.$family-sans-serif !default,
-    // $family-code: iv.$family-monospace !default,
+//     // // Typography
+//     // $family-primary: iv.$family-sans-serif !default,
+//     // $family-secondary: iv.$family-sans-serif !default,
+//     // $family-code: iv.$family-monospace !default,
 
-    // $size-small: iv.$size-7 !default,
-    // $size-normal: iv.$size-6 !default,
-    // $size-medium: iv.$size-5 !default,
-    // $size-large: iv.$size-4 !default,
+//     // $size-small: iv.$size-7 !default,
+//     // $size-normal: iv.$size-6 !default,
+//     // $size-medium: iv.$size-5 !default,
+//     // $size-large: iv.$size-4 !default,
 
-    // // Effects
-    // $shadow-color: iv.$black !default,
-);
+//     // // Effects
+//     // $shadow-color: iv.$black !default,
+// );
+
+@import "98.css/dist/98.css";
 
 html, body, #app {
     height: 100%;
@@ -96,7 +98,7 @@ html, body, #app {
 }
 
 #app {
-    background: url('bg.png') repeat;
+    background: #008080;
     overflow-y: scroll;
 }
 
