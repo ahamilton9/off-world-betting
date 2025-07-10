@@ -37,8 +37,8 @@ const submit = () => {
                 </div>
             </div>
             <div class="window-body" style="margin: 0;">
-                <div style="overflow: hidden; user-select: none; height: 75px; background: #c42121; background: linear-gradient(90deg,rgba(196, 33, 33, 1) 0%, rgba(255, 255, 255, 1) 100%); color: #fff; font-weight: bold; font-size: 6em; line-height: 1.25; padding-left: 10px; font-family: sans-serif;">
-                    <span style="transform: rotate(-20deg); display: inline-block;">OWB</span>
+                <div style="overflow: hidden; user-select: none; height: 75px; background: #e6b054; background: linear-gradient(90deg, #e6b054 0%, rgba(255, 255, 255, 1) 100%); color: #fff; font-weight: bold; font-size: 6em; line-height: 1.25; padding-left: 10px; font-family: sans-serif;">
+                    <img src="logo_white.png" style="width: 90px; display: inline-block; position: relative; left: 10px; top: -10px;" />
                 </div>
 
                 <form @submit.prevent="submit" style="padding: 10px 5px; display: flex;">
