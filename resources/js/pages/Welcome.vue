@@ -14,7 +14,7 @@ import { Link } from '@inertiajs/vue3';
                     <div style="font-size: 5em; line-height: 1; margin-left: -4px;" class="heading">Mecha Battle League</div>
                     <div style="padding-bottom: 1em; font-size: 2em;">Free-to-Play Fantasy Sports in Deep Space</div>
                     <template v-if="$page.props.auth.user">
-                        <Link :href="route('dashboard')" class="button">
+                        <Link :href="route('schedule')" class="button">
                         Dashboard
                         </Link>
                     </template>

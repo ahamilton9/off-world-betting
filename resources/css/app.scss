@@ -5,6 +5,15 @@ $red: hsl(0, 30%, 40%);
 $yellow: hsl(35, 30%, 40%);
 $light: hsl(0, 0%, 94%);
 
+:root {
+    --green: #005500;
+    --red: #8b0000;
+    --orange: #802200;
+    --blue: #0000b5;
+    --yellow: #634806;
+    --purple: #8b008b;
+}
+
 // #cfb9a2
 // #e6e2dd
 // #282e3c
@@ -93,6 +102,43 @@ p {margin: 1em 0 0.5em;}
             &.icon {
                 min-width: 50px;
             }
+
+            &.schedule:hover .mso {
+                text-shadow: 0 0 var(--red);
+            }
+            &.schedule:active .mso, &.schedule.active .mso {
+                text-shadow: 1px 1px var(--red);
+            }
+            &.roster:hover .mso {
+                text-shadow: 0 0 var(--blue);
+            }
+            &.roster:active .mso, &.roster.active .mso {
+                text-shadow: 1px 1px var(--blue);
+            }
+            &.standings:hover .mso {
+                text-shadow: 0 0 var(--yellow);
+            }
+            &.standings:active .mso, &.standings.active .mso {
+                text-shadow: 1px 1px var(--yellow);
+            }
+            &.leagues:hover .mso {
+                text-shadow: 0 0 var(--green);
+            }
+            &.leagues:active .mso, &.leagues.active .mso {
+                text-shadow: 1px 1px var(--green);
+            }
+            &.training:hover .mso {
+                text-shadow: 0 0 var(--purple);
+            }
+            &.training:active .mso, &.training.active .mso {
+                text-shadow: 1px 1px var(--purple);
+            }
+            &.settings:hover .mso {
+                text-shadow: 0 0 var(--orange);
+            }
+            &.settings:active .mso, &.settings.active .mso {
+                text-shadow: 1px 1px var(--orange);
+            }
         }
     }
 }
@@ -127,19 +173,23 @@ fieldset {
     font-size: 32px;
     font-variation-settings:
     'FILL' 0,
-    'wght' 200,
+    'wght' 300,
     'GRAD' 0,
     'opsz' 24;
     line-height: 1;
 }
 
-.thumper {
-    background-color: var(--surface);
+#throbber {
+    background-color: var(--text-color);
     margin-top: 1px;
+    box-sizing: border-box;
+    width: 52px;
 
-    img {
-        transform: rotateY(-90deg);
-        animation: rotateAnimation 1s linear infinite;
+    &.animate {
+        img {
+            transform: rotateY(-90deg);
+            animation: rotateAnimation 1s linear infinite;
+        }
     }
 }
 

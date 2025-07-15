@@ -16,12 +16,14 @@ defineProps<{
 </script>
 
 <template>
-    <Head title="Dashboard" />
+    <Head title="Schedule" />
 
     <AppLayout :breadcrumbs="breadcrumbs">
-        <p class="pb">Welcome, {{ user.username }}!</p>
+        <p class="pb">Where does login stuff go, {{ user.username }}?</p>
 
-        <fieldset style="width: 200px;">
+        <p>Calendar like Windows 2000 Backup. Vanilla JS?</p>
+
+        <!-- <fieldset style="width: 200px;">
             <legend>Standings</legend>
             <div class="sunken-panel">
                 <table class="interactive">
@@ -40,12 +42,12 @@ defineProps<{
                     </tbody>
                 </table>
             </div>
-        </fieldset>
+        </fieldset> -->
 
-        <fieldset style="width: 200px;">
+        <!-- <fieldset style="width: 100%; box-sizing:border-box;">
             <legend>Schedule</legend>
             Recent Games, Current Games, Upcoming Games
-        </fieldset>
+        </fieldset> -->
         <!-- <div class="sunken-panel" style="background-color: green; display: inline-block; padding: 5px;">
             <table class="radar">
                 <tbody>

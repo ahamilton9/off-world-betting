@@ -1,3 +1,18 @@
+<script setup>
+import { Link, router } from '@inertiajs/vue3';
+import { onMounted } from 'vue';
+
+onMounted(function() {
+    let throbber = document.querySelector('#throbber')
+    router.on('start', function() {
+        throbber.classList.add('animate')
+    })
+    router.on('finish', function() {
+        throbber.classList.remove('animate')
+    })
+})
+</script>
+
 <style lang="scss">
     main {
         flex-basis: 100%;
@@ -8,7 +23,7 @@
 </style>
 
 <template>
-    <main class="window" style="max-width: 960px; flex-basis: auto;">
+    <main class="window" style="width: 960px; height: 500px; flex-basis: auto;">
         <div class="title-bar">
             <img src="logo_white_small.png" style="padding: 0 6px 0 2px;" />
             <div class="title-bar-text" style="flex-grow: 1;">Off-World Betting Platform</div>
@@ -30,30 +45,34 @@
         <div class="menu-bar-container">
             <div class="menu-bar">
                 <div>
-                    <button class="menu-bar-item icon">
-                        <div class="mso">dashboard</div>
-                        Dashboard
-                    </button>
-                    <button class="menu-bar-item icon">
-                        <div class="mso">groups</div>
+                    <Link as="button" href="/schedule" class="menu-bar-item icon schedule" :class="{active: $page.url === '/schedule'}">
+                        <div class="mso">calendar_month</div>
+                        Schedule
+                    </Link>
+                    <Link as="button" href="/roster" class="menu-bar-item icon roster" :class="{active: $page.url === '/roster'}">
+                        <div class="mso">crowdsource</div>
                         Roster
-                    </button>
-                    <button class="menu-bar-item icon">
-                        <div class="mso">trending_up</div>
+                    </Link>
+                    <button class="menu-bar-item icon standings">
+                        <div class="mso">leaderboard</div>
                         Standings
                     </button>
-                    <button class="menu-bar-item icon">
+                    <button class="menu-bar-item icon leagues">
                         <div class="mso">communities</div>
                         Leagues
                     </button>
-                    <button class="menu-bar-item icon">
+                    <button class="menu-bar-item icon training">
                         <div class="mso">quiz</div>
                         Training
                     </button>
+                    <button class="menu-bar-item icon settings">
+                        <div class="mso">settings</div>
+                        Settings
+                    </button>
                 </div>
 
-                <div style="display: flex; align-items: center; justify-content: center; padding: 4px;" class="thumper emboss">
-                    <img src="logo_black.png" style="width: 36px; display: inline-block; height: auto;" />
+                <div style="display: flex; align-items: center; justify-content: center; padding: 4px;" id="throbber" class="emboss">
+                    <img src="logo_white.png" style="width: 30px; display: inline-block; height: auto;" />
                 </div>
             </div>
         </div>
